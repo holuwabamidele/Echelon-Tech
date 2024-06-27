@@ -4,7 +4,6 @@ import styled from "styled-components";
 import NewEntry from "../components/NewEntry";
 
 const NewPostPage = () => {
-  const navigation = useNavigate();
   const [logo, setLogo] = useState(null);
   const [title, setTitle] = useState("");
   const [image, setImage] = useState(null);
@@ -22,6 +21,11 @@ const NewPostPage = () => {
         ...storePost,
         { logo: logoURL, title, image: imageURL, description },
       ]);
+
+      setLogo("");
+      setTitle("");
+      setImage("");
+      setDescription("");
     } else {
       alert("All fields are required");
     }
@@ -68,8 +72,17 @@ const NewPostPage = () => {
           <Button onClick={createPost}>Post Update</Button>
         </Wrapper>
       </Container>
-      <div>
-        <Button onClick={clearData} style={{ backgroundColor: "red" }}>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Button
+          onClick={clearData}
+          style={{
+            backgroundColor: "red",
+            width: "310px",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           {" "}
           Clear Data
         </Button>

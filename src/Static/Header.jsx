@@ -39,7 +39,7 @@ const LogoLabel = styled.div`
   align-items: center;
 `;
 const Logo = styled.div`
-  font-size: 50px;
+  font-size: 30px;
   /* background-color: red; */
   display: flex;
   justify-content: center;
